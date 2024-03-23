@@ -1,0 +1,199 @@
+[
+    {
+        "file": "watcher.drawio",
+        "name": "watcher",
+        "children": [
+            {
+                "name": "Running",
+                "id": 7
+            },
+            {
+                "name": "Initial",
+                "id": 14
+            },
+            {
+                "name": "Queued",
+                "id": 15
+            },
+            {
+                "name": "Debouncing",
+                "id": 20
+            },
+            {
+                "name": "Watching",
+                "id": 27
+            }
+        ],
+        "connections": [
+            {
+                "dir": 0,
+                "source": {
+                    "name": "",
+                    "id": 0
+                },
+                "source_port": "begin",
+                "target": {
+                    "name": "Initial",
+                    "id": 14
+                },
+                "target_port": ""
+            },
+            {
+                "dir": 0,
+                "source": {
+                    "name": "",
+                    "id": 0
+                },
+                "source_port": "File<div>Changed</div>",
+                "target": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "target_port": "File Changed"
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Watching",
+                    "id": 27
+                },
+                "source_port": "File Changed",
+                "target": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "target_port": "File Changed"
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "source_port": "Debounced",
+                "target": {
+                    "name": "Running",
+                    "id": 7
+                },
+                "target_port": "debounced"
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Running",
+                    "id": 7
+                },
+                "source_port": "Run Done",
+                "target": {
+                    "name": "Watching",
+                    "id": 27
+                },
+                "target_port": "Run Done"
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Running",
+                    "id": 7
+                },
+                "source_port": "File Changed",
+                "target": {
+                    "name": "Queued",
+                    "id": 15
+                },
+                "target_port": "File Changed"
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Initial",
+                    "id": 14
+                },
+                "source_port": "",
+                "target": {
+                    "name": "Running",
+                    "id": 7
+                },
+                "target_port": ""
+            },
+            {
+                "dir": 1,
+                "source": {
+                    "name": "Queued",
+                    "id": 15
+                },
+                "source_port": "Run Done",
+                "target": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "target_port": "Run Done"
+            },
+            {
+                "dir": 2,
+                "source": {
+                    "name": "Queued",
+                    "id": 15
+                },
+                "source_port": "Abort",
+                "target": {
+                    "name": "",
+                    "id": 0
+                },
+                "target_port": "Aborted"
+            },
+            {
+                "dir": 2,
+                "source": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "source_port": "File Changed",
+                "target": {
+                    "name": "",
+                    "id": 0
+                },
+                "target_port": "File<div>Changed</div>"
+            },
+            {
+                "dir": 2,
+                "source": {
+                    "name": "Running",
+                    "id": 7
+                },
+                "source_port": "Abort",
+                "target": {
+                    "name": "",
+                    "id": 0
+                },
+                "target_port": "Aborted"
+            },
+            {
+                "dir": 2,
+                "source": {
+                    "name": "Debouncing",
+                    "id": 20
+                },
+                "source_port": "Abort",
+                "target": {
+                    "name": "",
+                    "id": 0
+                },
+                "target_port": "Aborted"
+            },
+            {
+                "dir": 2,
+                "source": {
+                    "name": "Watching",
+                    "id": 27
+                },
+                "source_port": "Abort",
+                "target": {
+                    "name": "",
+                    "id": 0
+                },
+                "target_port": "Aborted"
+            }
+        ]
+    }
+]
