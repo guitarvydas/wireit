@@ -1,5 +1,6 @@
-# quickie redrawing of diagram in https://github.com/google/wireit/blob/main/src/watcher.ts
+# quickie redrawing of diagram from https://github.com/google/wireit/blob/main/src/watcher.ts
 - The point is to show how to draw a compilable diagram. (I'm sure that this quickie example diagram is incorrect in some manner).
+- (-) see https://github.com/guitarvydas/wireit
 - (-) use draw.io (https://app.diagrams.net)
 - (a) make each box stand-alone (use processes, or closures, or 0D)
 - (b) put input and output ports on each box
